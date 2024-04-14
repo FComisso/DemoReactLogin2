@@ -57,7 +57,7 @@ export const msalConfig = {
  */
 export const protectedResources = {
     apiTodoList: {
-        endpoint: "http://localhost:5000/api/todolist",
+        endpoint: "https://api-gateway-openai-b2.azure-api.net/api/http_trigger",
         scopes: {
             read: [ "api://e7b81534-8ac0-400a-931a-a2fdbe2508a2/Todolist.Read" ],
             write: [ "api://e7b81534-8ac0-400a-931a-a2fdbe2508a2/Todolist.ReadWrite" ]
