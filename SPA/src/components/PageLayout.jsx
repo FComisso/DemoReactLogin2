@@ -1,6 +1,6 @@
 import { AuthenticatedTemplate } from "@azure/msal-react";
 import { NavigationBar } from "./NavigationBar";
-
+import APITester from '../components/APITester';
 export const PageLayout = (props) => {
 
     /**
@@ -9,7 +9,7 @@ export const PageLayout = (props) => {
      * only render their children if a user is authenticated or unauthenticated, respectively.
      */
     return (
-        <>
+        <>            <APITester></APITester>
             <NavigationBar />
             <br />
             <h5><center>Welcome to the Microsoft Authentication Library For React Tutorial</center></h5>
@@ -23,6 +23,7 @@ export const PageLayout = (props) => {
                     </center>
                 </footer>
             </AuthenticatedTemplate>
+
         </>
     );
 };

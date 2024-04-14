@@ -2,31 +2,9 @@ import { useEffect, useState } from 'react';
 import { MsalAuthenticationTemplate } from '@azure/msal-react';
 import { InteractionType } from '@azure/msal-browser';
 
-import { ListView } from '../components/ListView';
+import APITester from '../components/APITester';
 import { loginRequest, protectedResources } from "../authConfig";
-import useFetchWithMsal from '../hooks/useFetchWithMsal';
 
-const TodoListContent = () => {
-    const { error, execute } = useFetchWithMsal({
-        scopes: protectedResources.apiTodoList.scopes.read,
-    });
-
-    const [todoListData, setTodoListData] = useState(null);
-
-    useEffect(() => {
-        if (!todoListData) {
-            execute("GET", protectedResources.apiTodoList.endpoint).then((response) => {
-                setTodoListData(response);
-            });
-        }
-    }, [execute, todoListData])
-
-    if (error) {
-        return <div>Error: {error.message}</div>;
-    }
-
-    return <>{todoListData ? <ListView todoListData={todoListData} /> : null}</>;
-};
 
 /**
  * The `MsalAuthenticationTemplate` component will render its children if a user is authenticated
@@ -45,7 +23,7 @@ export const TodoList = () => {
             interactionType={InteractionType.Redirect} 
             authenticationRequest={authRequest}
         >
-            <TodoListContent />
+            <APITester />
         </MsalAuthenticationTemplate>
     );
 };
