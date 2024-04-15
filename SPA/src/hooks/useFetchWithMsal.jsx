@@ -46,6 +46,9 @@ const useFetchWithMsal = (msalRequest) => {
 
                 if (data) headers.append('Content-Type', 'application/json');
 
+                headers.append('Access-Control-Allow-Origin', 'https://gray-water-00c212e0f.5.azurestaticapps.net');
+
+
                 let options = {
                     method: method,
                     headers: headers,
