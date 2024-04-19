@@ -12,7 +12,7 @@ import { LogLevel } from "@azure/msal-browser";
  */
 export const msalConfig = {
     auth: {
-        clientId: "5770c991-69b7-45ca-9e4b-ff59a633f872", // This is the ONLY mandatory field that you need to supply.
+        clientId: "eb7104dc-11b1-4698-a1cb-e550bee73c07", // This is the ONLY mandatory field that you need to supply.
         authority: "https://login.microsoftonline.com/419624f7-52df-4ecf-a4f6-8953cabc487a", // Defaults to "https://login.microsoftonline.com/common"
         redirectUri: "/", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
         postLogoutRedirectUri: "/", // Indicates the page to navigate after logout.
@@ -59,8 +59,8 @@ export const protectedResources = {
     apiTodoList: {
         endpoint: "https://api-gateway-openai-b2.azure-api.net/api/http_trigger",
         scopes: {
-            read: [ "api://e7b81534-8ac0-400a-931a-a2fdbe2508a2/Todolist.Read" ],
-            write: [ "api://e7b81534-8ac0-400a-931a-a2fdbe2508a2/Todolist.ReadWrite" ]
+            read: [ "api://api_b2_gateway_id/Todolist.Read" ],
+            write: [ "api://api_b2_gateway_id/Todolist.ReadWrite" ]
         }
     }
 }
